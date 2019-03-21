@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.8/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="inputValue">
+        <button v-on:click="handleClick">提交</button>
+        <ul>
+            <li v-for="item in list">{{item}}</li>
+        </ul>
+    </div>
+    <script>
+         new Vue({
+            el: "#app",
+            data: {
+                list: [],
+                inputValue: ''
+                /*list: ['第一课的内容','第二课的内容','3333333333']*/
+            },
+            methods: {
+                handleClick: function () {
+                    this.list.push = this.inputValue
+                    this.inputValue = ''
+                   /* alert(this.inputValue)*/
+                   /* alert(this.list)*/
+                }
+            }
+        })
+    </script>
+</body>
+</html>

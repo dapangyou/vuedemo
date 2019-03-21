@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.8/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    {{content}}
+</div>
+</body>
+<script>
+    /*原生的js编写的代码*/
+   /* var dom = document.getElementById('app');
+    dom.innerHTML='hello world';*/
+    /*<!--vue编写的方式-->*/
+     var app = new Vue({
+        el: '#app',
+        data: {
+            content: "hello world vue 000 "
+        }
+    });
+    setTimeout(function () {
+        app.$data.content='by word'
+    },2000)
+    /*
+    1.创建vue的实例
+    2.实例接收配置项
+        el:配置项是实例负责接收的配置
+            让实例接管id=app的内容
+         data:定义一些数据 可以通过插值表达式调用data里面的数据
+         el:定义处理vue接管的内容
+         vue实例只会接管id=app的内容
+    */
+    //直接操作dom 的方法
+    /*setTimeout(function () {
+        dom.innerHTML = 'hello111'
+    },2000)*/
+
+    //vue的方式
+</script>
+</html>
